@@ -20,7 +20,7 @@ const About = () => {
     {
       icon: <FaGraduationCap className="text-3xl text-blue-600" />,
       title: "Education",
-      description: "2nd Year B.Tech Computer Science at GIFT Autonomous College"
+      description: "3rd Year B.Tech Computer Science at GIFT Autonomous College"
     },
     {
       icon: <FaCode className="text-3xl text-green-600" />,
