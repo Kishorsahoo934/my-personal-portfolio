@@ -83,7 +83,7 @@ const Skills = () => {
             {skill.level}%
           </span>
         </div>
-        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: `${skill.level}%` }}
@@ -93,7 +93,7 @@ const Skills = () => {
           >
             <motion.div
               animate={{
-                x: ["-100%", "100%"],
+                x: ["-50%", "50%"],
               }}
               transition={{
                 duration: 2,
@@ -101,7 +101,7 @@ const Skills = () => {
                 ease: "linear",
                 delay: index * 0.2
               }}
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-6"
             />
           </motion.div>
         </div>
