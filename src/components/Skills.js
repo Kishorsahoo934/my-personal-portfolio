@@ -71,7 +71,7 @@ const Skills = () => {
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.05 }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
         className="mb-4"
       >
@@ -87,7 +87,7 @@ const Skills = () => {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: `${skill.level}%` }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.05 }}
             transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
             className={`h-2.5 bg-gradient-to-r ${categoryGradient} rounded-full relative overflow-hidden`}
           >
@@ -110,9 +110,9 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section id="skills" className="py-20 px-4 sm:px-6 bg-white dark:bg-gray-900 relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
@@ -135,21 +135,21 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.05 }}
           variants={staggerContainer}
           className="max-w-6xl mx-auto"
         >
           {/* Section Header */}
-          <motion.div
-            variants={fadeInUp}
-            className="text-center mb-16"
-          >
+          <motion.div variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white mb-6">
-              My <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Skills</span>
+              My{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Skills
+              </span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -196,7 +196,7 @@ const Skills = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.05 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700"
                 >
@@ -214,10 +214,7 @@ const Skills = () => {
           </div>
 
           {/* Additional Skills Cloud */}
-          <motion.div
-            variants={fadeInUp}
-            className="mt-20 text-center"
-          >
+          <motion.div variants={fadeInUp} className="mt-20 text-center">
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-8">
               Other Technologies I've Worked With
             </h3>
@@ -232,7 +229,7 @@ const Skills = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.05 }}
                   transition={{ 
                     duration: 0.3,
                     delay: index * 0.05,
